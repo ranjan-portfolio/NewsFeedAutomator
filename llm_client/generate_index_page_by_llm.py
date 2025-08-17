@@ -1,0 +1,17 @@
+from langchain_openai import ChatOpenAI
+from llm_client.summarize_news_by_llm import get_suumarized_news_content
+from dotenv import load_dotenv
+from prompts.create_html_newletter import generate_newsletter_html_prompt
+
+load_dotenv()
+
+def generate_indexpage_by_llm() -> str:
+
+    news_summary=get_suumarized_news_content()
+    promptlist=generate_newsletter_html_prompt(news_summary)
+
+    llm=ChatOpenAI(model="gpt-4o")
+        
+    html_response=llm.invoke(promptlist[0])
+    
+    return html_response.content

@@ -1,0 +1,3 @@
+from llm_client.summarize_news_by_llm import get_suumarized_news_content
+
+get_suumarized_news_content()
