@@ -67,3 +67,26 @@ def deploy_html_toS3(html:str)-> str:
         return "❌ File not found."
     except NoCredentialsError:
         return "❌ AWS credentials not available."
+
+
+def get_latest_newsfile_created_time():
+
+    s3 = boto3.client('s3')
+
+    bucket_name = "newsautomator.rancher-ranjanaws.com"
+    object_key = "index.html"   # replace with your object key
+
+    # List object versions
+    response = s3.list_object_versions(
+        Bucket=bucket_name,
+        Prefix=object_key,
+        MaxKeys=1
+    )
+
+    # Get the latest version
+    if "Versions" in response and response["Versions"]:
+        latest_version = response["Versions"][0]
+        print("Latest Version ID:", latest_version["VersionId"])
+        print("Last Modified:", latest_version["LastModified"])
+    else:
+        print("No versions found for object")

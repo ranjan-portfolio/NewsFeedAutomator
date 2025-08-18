@@ -8,6 +8,7 @@
 from llm_client.generate_index_page_by_llm import generate_indexpage_by_llm
 from tools.send_mail import sendemail
 from tools.deploy_s3 import deploy_html_toS3
+from tools.cache_invalidation import invalidate_cloudfront_cache
 import re
 
 
@@ -24,3 +25,8 @@ print(email_response)
 s3_response=deploy_html_toS3(html_blocks[0])
 
 print(s3_response)
+
+print("going to invalidate cloudfront cache")
+
+invalidate_cloudfront_cache()
+
