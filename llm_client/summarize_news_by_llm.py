@@ -1,9 +1,11 @@
 from langchain_openai import ChatOpenAI
 from prompts.summarize_news import get_summarize_newscontent_prompts
 from dotenv import load_dotenv
+from langsmith import traceable
 
 load_dotenv()
 
+@traceable
 def get_suumarized_news_content() -> list[str]:
 
     prompts=get_summarize_newscontent_prompts()

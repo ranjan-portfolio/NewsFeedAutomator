@@ -15,7 +15,7 @@ def sendemail(response: str) -> str:
 
     subject="Your daily tech news byte"
     SENDER_EMAIL="ranjanabha@gmail.com"
-    receiver_list=["saumyadip.sinha0611@gmail.com","ranjanabha@gmail.com","subhrasankar.mukherjee@gmail.com"]
+    receiver_list=["ranjanabha@gmail.com"]
 
     try:
         msg = MIMEMultipart("alternative")

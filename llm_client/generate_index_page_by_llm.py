@@ -2,9 +2,11 @@ from langchain_openai import ChatOpenAI
 from llm_client.summarize_news_by_llm import get_suumarized_news_content
 from dotenv import load_dotenv
 from prompts.create_html_newletter import generate_newsletter_html_prompt
+from langsmith import traceable
 
 load_dotenv()
 
+@traceable
 def generate_indexpage_by_llm() -> str:
 
     news_summary=get_suumarized_news_content()
