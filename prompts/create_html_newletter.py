@@ -28,6 +28,12 @@ def generate_newsletter_html_prompt(news: list[str])->str :
         nav h1 {
             margin: 0;
         }
+        .powered-by {
+            font-size: 0.9em;
+            color: #bbb;
+            margin-top: 4px;
+            font-style: italic;
+        }
         .content {
             padding: 20px;
         }
@@ -45,6 +51,7 @@ def generate_newsletter_html_prompt(news: list[str])->str :
 
     <nav>
         <h1>Tech Newz Bytezz</h1>
+        <div class="powered-by">Powered by AI</div>
     </nav>
 
     <div class="content">
@@ -62,7 +69,7 @@ def generate_newsletter_html_prompt(news: list[str])->str :
     html_generate_prompt_template='''
         You are my digital asistant. Given a whole news page with {num_stories} where each story starts with ====\n and Title starts
         with ** and ends with ** add stories in provided template {story_template} inside div with class content
-        Here is the whole news page.Include **every story** from the page in the final HTML. Do not skip or summarize stories.
+        Here is the whole news page.Include **30 story** from the page in the final HTML. if  Do not skip or summarize stories.
         Page: {whole_news}
      '''
     

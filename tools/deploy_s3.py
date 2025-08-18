@@ -29,6 +29,20 @@ def deploy_html_toS3(html:str)-> str:
             "Principal": "*",
             "Action": "s3:GetObject",
             "Resource": "arn:aws:s3:::newsautomator.rancher-ranjanaws.com/*"
+        },
+        {
+            "Sid": "AllowCloudFrontServicePrincipalRead",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "cloudfront.amazonaws.com"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::newsautomator.rancher-ranjanaws.com/*",
+            "Condition": {
+                "StringEquals": {
+                    "AWS:SourceArn": "arn:aws:cloudfront::588578924488:distribution/E2IHQN1MUS8MW8"
+                }
+            }
         }
     ]
    }
@@ -46,7 +60,7 @@ def deploy_html_toS3(html:str)-> str:
             Bucket=BUCKET_NAME,
             Policy=json.dumps(s3_bucket_policy)
         )
-        
+
         return f"✅ index.html uploaded to S3 bucket {BUCKET_NAME} successfully!"
 
     except FileNotFoundError:
