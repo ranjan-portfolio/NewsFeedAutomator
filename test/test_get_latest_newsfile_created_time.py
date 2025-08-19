@@ -1,0 +1,3 @@
+from tools.deploy_s3 import get_latest_newsfile_created_time
+
+get_latest_newsfile_created_time()
