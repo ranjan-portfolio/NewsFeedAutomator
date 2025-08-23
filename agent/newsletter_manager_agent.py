@@ -1,5 +1,5 @@
 from langchain_openai import ChatOpenAI
-from langchain_tavily import TavilySearch
+from langchain_tavily import TavilySearch,TavilyCrawl,TavilyExtract
 from langchain_core.prompts import ChatMessagePromptTemplate
 from dotenv import load_dotenv
 from langchain.agents import initialize_agent,AgentType
@@ -10,7 +10,9 @@ from tools.send_mail import sendemail
 
 load_dotenv()
 
-tavily_search=TavilySearch(max_result=30)
+tavily_search=TavilySearch(max_result=5)
+tavily_extract=TavilyExtract()
+tavily_crawl=TavilyCrawl()
 
 model= ChatOpenAI(model="gpt-4o-mini")
 
@@ -24,7 +26,8 @@ deploy_tool=Tool(
 invalidate_cache=Tool(
     name="InvalidateCloudFrontCache",
     func=invalidate_cloudfront_cache,
-    description="The tool invalidates cloud front cache"
+    description="The tool invalidates cloud front cache",
+    
 )
 
 send_email=Tool(
@@ -35,7 +38,7 @@ send_email=Tool(
 
 
 agent=initialize_agent(
-    tools=[tavily_search,deploy_tool,invalidate_cache,send_email],
+    tools=[tavily_search,tavily_extract,tavily_crawl,deploy_tool,invalidate_cache,send_email],
     llm=model,
     agent=AgentType.OPENAI_FUNCTIONS,
     verbose=True
@@ -102,7 +105,7 @@ template='''
      '''
 
 query = f"""
-    Retrieve the latest 30 technology news articles from pas 24 hrs. 
+    Use Taveily Crawl with maxdepth=1 to get latest 30 technology news articles from past 24 hrs. 
     Please use following urls for crawling.
     "https://techcrunch.com/feed/",
     "https://www.theverge.com/rss/index.xml",
@@ -115,9 +118,9 @@ query = f"""
     - link
     Then Create an html page index.html using following template {template} and insert each json item inside
     <div class="content"> with new div <div class="story"></div>
-    Then send email html page index.html to subscribers
-    Then Deploy the index.html to S3 
-    Then invalidate cloudfront cache
+    Then Use SendEmail to send email html page index.html to subscribers
+    Then Use DeployHTMLtoS3 to deploy the index.html to S3 
+    Then Use InvalidateCloudFrontCache cloudfront cache
     
 """ 
 
