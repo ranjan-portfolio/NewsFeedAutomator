@@ -1,7 +1,10 @@
 from langchain_openai import ChatOpenAI
 from prompts.summarize_news import get_summarize_newscontent_prompts
 from dotenv import load_dotenv
+import os
 from langsmith import traceable
+from datetime import datetime
+from tools.save_news import write_news_file
 
 load_dotenv()
 
@@ -19,4 +22,8 @@ def get_suumarized_news_content() -> list[str]:
         summarized_news=llm.invoke(prompt)
         summarized_news_list.append(summarized_news.content)
     
+        write_news_file(summarized_news_list)
+
+    
+   
     return summarized_news_list

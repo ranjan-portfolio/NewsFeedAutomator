@@ -7,10 +7,9 @@ from langsmith import traceable
 load_dotenv()
 
 @traceable
-def generate_indexpage_by_llm() -> str:
+def generate_indexpage_by_llm(news:list) -> str:
 
-    news_summary=get_suumarized_news_content()
-    promptlist=generate_newsletter_html_prompt(news_summary)
+    promptlist=generate_newsletter_html_prompt(news)
 
     llm=ChatOpenAI(model="gpt-4o")
         

@@ -68,9 +68,10 @@ def generate_newsletter_html_prompt(news: list[str])->str :
 
     html_generate_prompt_template='''
         You are my digital asistant. Given a whole news page with {num_stories} where each story starts with ====\n and Title starts
-        with ** and ends with ** add stories in provided template {story_template} inside div with class content
-        Here is the whole news page.Include **30 story** from the page in the final HTML. if  Do not skip or summarize stories.
-        Page: {whole_news}
+        with ** and ends with ** create an index.html page with provided template. **Do not skip or summarize stories**.
+        Here is the html template {story_template}.Please add each story inside <div class="content"></div>.
+        Here is the whole news page {whole_news}.
+        Include **30 story** from the page in the final HTML. 
      '''
     
     prompt = PromptTemplate(

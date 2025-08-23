@@ -1,0 +1,41 @@
+Coinbase CEO Brian Armstrong fired engineers who failed to onboard quickly with AI tools like GitHub Copilot, despite the company acquiring enterprise licenses for all engineers. His decision followed concerns about the slow adoption of AI tools, which some had predicted would take months. Armstrong's mandate was clear: engineers were required to familiarize themselves with AI systems, and those without a valid excuse for not doing so faced termination. While some viewed Armstrong's actions as heavy-handed, they underscored the importance he places on AI integration in the company. Armstrong has since focused on promoting further training, acknowledging the complexities of integrating AI-generated code, a concern also echoed by Stripe's co-founder, John Collison.
+
+Coinbase's AI Ultimatum: Embrace or Exit
+
+Source: TechCrunch  
+Link: [https://techcrunch.com/2025/08/22/coinbase-ceo-explains-why-he-fired-engineers-who-didnt-try-ai-immediately/](https://techcrunch.com/2025/08/22/coinbase-ceo-explains-why-he-fired-engineers-who-didnt-try-ai-immediately/)
+====
+Bluesky, a social networking startup, has chosen to block access to its service in Mississippi rather than comply with a new state law mandating age verification for all users. The measure, known as HB 1126, requires platforms to verify the age of every user and gain parental consent for minors, posing a significant compliance challenge for smaller companies like Bluesky. The U.S. Supreme Court recently upheld the law, leading Bluesky to express concerns about privacy risks and the broad scope that could hinder innovation and free speech. Bluesky emphasizes that by enforcing age verification on all users, as opposed to just content access, the law imposes disproportionate costs that are easier for big tech to handle but detrimental to emerging companies. This decision specifically affects Bluesky's app built on the AT Protocol, highlighting complexities for smaller tech firms compared to larger players in adapting to such regulations.
+
+**Mississippi Law Spurs Bluesky's Exit: Privacy Concerns Over Age Assurance**
+
+Source: TechCrunch  
+Link: https://techcrunch.com/2025/08/22/bluesky-blocks-service-in-mississippi-over-age-assurance-law/
+====
+Apple is introducing new enterprise-focused tools with its upcoming software updates, enabling businesses to configure and control their use of an enterprise version of OpenAI’s ChatGPT. These updates, arriving in September, offer IT administrators the flexibility to restrict or allow any external AI provider, beyond just OpenAI, as part of Apple's strategic move to keep enterprise systems adaptable and secure. This approach underscores Apple's commitment to providing businesses with the autonomy to manage where data is processed, whether in the cloud or locally. Beyond AI integrations, Apple is enhancing its Apple Business Manager service with an API for improved integration with IT tools, and expanding its Return to Service features to streamline device management. These innovations reflect Apple's ongoing dedication to supporting enterprise needs as AI becomes more integrated into business environments.
+
+Apple Expands Enterprise AI Control with New ChatGPT Configurations
+
+Source: [TechCrunch](https://techcrunch.com/feed/)
+
+Link: [TechCrunch Article](https://techcrunch.com/2025/08/22/apple-gets-ready-for-ai-in-the-enterprise-with-new-chatgpt-configuration-options/)
+====
+The U.S. government plans to acquire a 10% stake in Intel, as confirmed by President Donald Trump, following Bloomberg's initial report. This announcement has led to a more than 7% increase in Intel's stock value. The proposal was made during a critical time for Intel, as its CEO, Lip-Bu Tan, is currently undertaking a significant restructuring of the company. The U.S. government has rarely taken equity stakes in private firms, with notable exceptions during the 2008-2009 financial crisis. The Intel deal follows a recent $2 billion investment from Japan's SoftBank, underscoring a focus on advancing U.S. semiconductor technology.
+
+"Trump Proposes Unprecedented 10% Government Stake in Intel Amid Restructuring and Investments"
+
+Source: TechCrunch  
+Link: [https://techcrunch.com/2025/08/22/u-s-government-plans-to-take-a-10-stake-in-intel/](https://techcrunch.com/2025/08/22/u-s-government-plans-to-take-a-10-stake-in-intel/)
+====
+Despite recent reports fueled by temporary website access, TikTok remains banned in India, as confirmed by TechCrunch. A spokesperson from the company and a senior Indian IT Ministry official stated that the ban imposed in 2020 under Section 69A of the IT Act is still in effect. The brief access, reported by Indian users claiming the site loaded without a VPN, was attributed to a network-level misconfiguration, similar to an incident in 2022. These developments highlight ongoing tensions and regulatory challenges for TikTok and other Chinese-linked apps in India.
+
+TikTok India Return Remains Fantasy Despite Website Glitch
+
+Source: TechCrunch  
+Link: https://techcrunch.com/2025/08/22/tiktok-denies-india-comeback-after-reports-of-website-going-live/
+====
+Apple is reportedly considering a collaboration with Google to integrate Google's Gemini model into Siri in an effort to revamp its AI capabilities and keep pace with competitors. The tech giant finds itself lagging behind in the development of a competitive AI assistant and is exploring external solutions from companies like Google, OpenAI, and Anthropic. Currently, Google is working on training a model that could potentially operate on Apple’s servers, although a definitive decision on partnership is weeks away. This strategic move highlights Apple’s urgency in transforming Siri to meet consumer expectations and remain competitive in the AI landscape.
+
+Apple Eyes Google Partnership for Siri AI Boost
+
+Source: [TechCrunch](https://techcrunch.com/2025/08/22/apple-is-in-talks-to-use-googles-gemini-for-siri-revamp-report-says/)
