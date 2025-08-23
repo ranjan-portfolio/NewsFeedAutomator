@@ -11,7 +11,8 @@ def get_summarize_newscontent_prompts()-> list[str]:
     prompt_list=list()
 
     summarize_news_template="""
-        You are a tech journalist. Summarize the following news article with a catching title
+        You are a tech journalist. Summarize the following news article in 4-5 sentences,
+        highlighting the key facts, context, and implications, and create a catching title.
         Keep a line between summary and title, also quote the source and provide link to the source:
 
         Title: {title}

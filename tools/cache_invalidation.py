@@ -2,7 +2,7 @@ import boto3
 import time
 
 
-def invalidate_cloudfront_cache()-> str:
+def invalidate_cloudfront_cache(tool_input=None)-> str:
     # Create CloudFront client
     client = boto3.client('cloudfront')
 
