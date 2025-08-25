@@ -12,7 +12,7 @@ from tools.deploy_s3 import deploy_html_toS3
 from tools.cache_invalidation import invalidate_cloudfront_cache
 from tools.save_news import write_news_file
 import re
-from rag.NewsVector import create_vector_db
+from rag.create_news_vector_db import create_vector_db
 
 
 news_list=get_suumarized_news_content()

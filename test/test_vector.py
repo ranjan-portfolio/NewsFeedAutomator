@@ -1,5 +1,5 @@
 from tools.save_news import write_news_file
-from rag.NewsVector import create_vector_db
+from rag.create_news_vector_db import create_vector_db
 import os
 
 current_dir=os.path.dirname(__file__)
@@ -16,7 +16,7 @@ assert news_items,"No news items found in test_file.txt"
 file_path=write_news_file(news_items)
 chromadb=create_vector_db(file_path)
 
-query = "Latest AI news. Please extract the full news do not summarize or truncate the news"
+query = "provide me latest elon musk news. Please extract the full news do not summarize or truncate the news"
 retriever = chromadb.as_retriever(
     search_type="similarity_score_threshold",
     search_kwargs={"k": 3, "score_threshold": 0.1},

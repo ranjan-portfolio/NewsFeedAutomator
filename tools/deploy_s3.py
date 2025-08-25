@@ -3,8 +3,12 @@ from botocore.exceptions import NoCredentialsError
 from dotenv import load_dotenv
 import os
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
+
 
 def deploy_html_toS3(html:str)-> str:
     # AWS credentials (can also use environment variables or IAM roles)
@@ -60,33 +64,12 @@ def deploy_html_toS3(html:str)-> str:
             Bucket=BUCKET_NAME,
             Policy=json.dumps(s3_bucket_policy)
         )
-
+        logger.fatal("deployment successful...")
         return f"✅ index.html uploaded to S3 bucket {BUCKET_NAME} successfully!"
 
     except FileNotFoundError:
+        logger.error("Encounterd error while deploying file,index.html not found")
         return "❌ File not found."
     except NoCredentialsError:
+        logger.error("Encounterd error while deploying file,Credentials not supplied")
         return "❌ AWS credentials not available."
-
-
-def get_latest_newsfile_created_time():
-
-    s3 = boto3.client('s3')
-
-    bucket_name = "newsautomator.rancher-ranjanaws.com"
-    object_key = "index.html"   # replace with your object key
-
-    # List object versions
-    response = s3.list_object_versions(
-        Bucket=bucket_name,
-        Prefix=object_key,
-        MaxKeys=1
-    )
-
-    # Get the latest version
-    if "Versions" in response and response["Versions"]:
-        latest_version = response["Versions"][0]
-        print("Latest Version ID:", latest_version["VersionId"])
-        print("Last Modified:", latest_version["LastModified"])
-    else:
-        print("No versions found for object")

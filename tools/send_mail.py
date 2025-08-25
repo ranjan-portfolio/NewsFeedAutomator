@@ -5,17 +5,19 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
 
+
 load_dotenv()
 
 APP_PASSWORD = os.getenv("APP_PASSWORD")
 
 sender_list=["ranjanabha@gmail.com"]
 
+
 def sendemail(response: str) -> str:
 
     subject="Your daily tech news byte"
     SENDER_EMAIL="ranjanabha@gmail.com"
-    receiver_list=["ranjanabhabvhattacharya@gmail.com"]
+    receiver_list=["ranjanabhabhattacharya@gmail.com"]
 
     try:
         msg = MIMEMultipart("alternative")

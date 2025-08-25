@@ -2,11 +2,10 @@ from langchain_core.prompts import PromptTemplate
 from tools.news_feeder import get_latest_news_feed
 
 
+
 def get_summarize_newscontent_prompts()-> list[str]:
     
     latest_items=get_latest_news_feed()
-
-    
     latest_items=latest_items[:30]
 
     prompt_list=list()

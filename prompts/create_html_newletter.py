@@ -1,15 +1,16 @@
 from langchain.prompts import PromptTemplate
+import logging
 
-
+logger=logging.getLogger(__name__)
 
 def generate_newsletter_html_prompt(news: list[str])->str :
-
+    logger.info("Inside generate_newsletter_html_prompt... ")
     no_of_stories=len(news)
 
     template='''
-        <!DOCTYPE html>
-<html lang="en">
-<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Newz Bytezz</title>
