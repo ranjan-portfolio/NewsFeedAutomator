@@ -1,7 +1,7 @@
 # NewsFeedAutomator
 
 **Tech Newz Bytezz**  
-Live Demo: https://newautomator.rancher-ranjanaws.com/
+Live Demo: https://technewzbytez.rancher-ranjanaws.com/
 
 <img width="435" height="622" alt="Screenshot" src="https://github.com/user-attachments/assets/cc9c52bb-d0d0-40c0-9e0b-4bedcccfbf0f" />
 
